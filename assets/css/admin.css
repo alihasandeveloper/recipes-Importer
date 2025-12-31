@@ -1,0 +1,254 @@
+/* Recipe Scraper - Admin Styles */
+.rs-wrapper {
+    max-width: 100%;
+    margin: 20px 0;
+}
+.rs-wrapper h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 600;
+}
+/* Input Group */
+.rs-input-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.rs-input-group input[type="url"] {
+    flex: 1;
+    padding: 10px 14px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.rs-input-group input[type="url"]:focus {
+    border-color: #2271b1;
+    outline: none;
+    box-shadow: 0 0 0 1px #2271b1;
+}
+.rs-input-group .button {
+    padding: 10px 20px;
+    height: auto;
+    font-size: 14px;
+}
+.rs-input-group .spinner {
+    margin: 0;
+}
+/* Visual Editor Layout */
+#rs-visual-editor {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 20px;
+}
+.rs-sidebar {
+    flex: 0 0 350px;
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+.rs-sidebar h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+.rs-sidebar .description {
+    margin-bottom: 20px;
+    color: #646970;
+    font-size: 13px;
+}
+/* Field Groups */
+.rs-field-group {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+.rs-field-group:last-of-type {
+    border-bottom: none;
+}
+.rs-field-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    color: #1d2327;
+}
+.rs-field-group label .required {
+    color: #d63638;
+}
+.rs-field-group small.description {
+    display: block;
+    margin-top: 6px;
+    color: #646970;
+    font-size: 12px;
+}
+.rs-input-row {
+    display: flex;
+    gap: 8px;
+}
+.rs-input-row input {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-family: 'Courier New', monospace;
+    background: #f6f7f7;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #2271b1;
+}
+.rs-input-row .button {
+    flex: 0 0 80px;
+    padding: 8px 12px;
+    font-size: 13px;
+    height: auto;
+    transition: all 0.2s ease;
+}
+.rs-input-row .button.active {
+    background: #2271b1;
+    color: white;
+    border-color: #135e96;
+}
+.rs-input-row .button.selected-success {
+    background: #00a32a;
+    color: white;
+    border-color: #008a20;
+}
+/* Field Previews */
+.rs-field-preview {
+    margin-top: 8px;
+}
+.rs-text-preview {
+    padding: 8px 12px;
+    background: #f0f6fc;
+    border-left: 3px solid #2271b1;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #1d2327;
+    max-height: 60px;
+    overflow: hidden;
+}
+.rs-count-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #00a32a;
+    color: white;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+}
+#rs-preview-image img {
+    display: block;
+    border: 2px solid #ddd;
+}
+/* Action Buttons */
+#rs-save-mapping {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    height: auto;
+    margin-top: 10px;
+}
+#rs-result-output {
+    margin-top: 15px;
+}
+#rs-result-output .notice {
+    margin: 0;
+    padding: 10px 12px;
+}
+/* Preview Window */
+.rs-preview-window {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.rs-preview-header {
+    padding: 12px 16px;
+    background: #1d2327;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 500;
+}
+.rs-preview-url {
+    color: #a7aaad;
+    font-size: 12px;
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#rs-site-frame {
+    flex: 1;
+    width: 100%;
+    min-height: 600px;
+    border: none;
+    background: white;
+}
+/* Responsive */
+@media (max-width: 1280px) {
+    #rs-visual-editor {
+        flex-direction: column;
+    }
+    .rs-sidebar {
+        flex: 1;
+        max-height: none;
+    }
+    #rs-site-frame {
+        min-height: 500px;
+    }
+}
+/* Loading States */
+.rs-input-group .button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+/* WordPress Notice Overrides */
+.rs-wrapper .notice.inline {
+    display: block;
+    margin: 0;
+    padding: 12px;
+}
+.rs-wrapper .notice.inline p {
+    margin: 0;
+    font-size: 13px;
+}
+/* Smooth Transitions */
+.rs-select-btn,
+.rs-input-row input,
+#rs-visual-editor {
+    transition: all 0.2s ease;
+}
+/* Scrollbar Styling for Sidebar */
+.rs-sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+.rs-sidebar::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+.rs-sidebar::-webkit-scrollbar-thumb {
+    background: #c3c4c7;
+    border-radius: 4px;
+}
+.rs-sidebar::-webkit-scrollbar-thumb:hover {
+    background: #a7aaad;
+}
+/* Step 1 Description */
+.rs-step-1 .description {
+    margin-top: 10px;
+    color: #646970;
+}
